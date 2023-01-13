@@ -1,26 +1,42 @@
 {
-  "name": "craftcms/craft",
-  "description": "Craft CMS",
+  "name": "bufe/craft",
+  "version": "1.0.0",
+  "description": "Craft CMS adapted to BfE needs",
   "keywords": [
     "craft",
     "cms",
     "craftcms",
-    "project"
+    "project",
+    "erfrischung"
   ],
   "license": "0BSD",
-  "homepage": "https://craftcms.com/",
+  "homepage": "https://erfrischung.ch",
   "type": "project",
-  "support": {
-    "email": "support@craftcms.com",
-    "issues": "https://github.com/craftcms/cms/issues",
-    "forum": "https://craftcms.stackexchange.com/",
-    "source": "https://github.com/craftcms/cms",
-    "docs": "https://craftcms.com/docs",
-    "rss": "https://craftcms.com/changelog.rss"
-  },
+  "authors": [
+    {
+      "name": "Jonas Langford"
+    },
+    {
+      "name": "Philippe Weber"
+    },
+    {
+      "name": "Severin Vonlanthen"
+    }
+  ],
   "require": {
     "craftcms/cms": "^4.3.5",
-    "vlucas/phpdotenv": "^5.4.0"
+    "vlucas/phpdotenv": "^5.4.0",
+    "codemonauts/craft-readonly-field": "^2.0.1",
+    "craftcms/element-api": "^3.0",
+    "craftcms/redactor": "^3",
+    "doublesecretagency/craft-cpcss": "^2.5.0",
+    "manuelodelain/svg-twig-extension": "^0.1.0",
+    "misterbk/mix": "^1.6.0",
+    "phpmailer/phpmailer": "^6.0",
+    "sebastianlenz/linkfield": "^2.1.4",
+    "spicyweb/craft-neo": "^3",
+    "verbb/super-table": "^3",
+    "homm/hommxmlsitemap": "^1.0.0"
   },
   "require-dev": {
     "craftcms/generator": "^1.0.0",
@@ -46,9 +62,7 @@
     "post-create-project-cmd": [
       "@php -r \"file_exists('.env') || copy('.env.example.dev', '.env');\"",
       "@php -r \"unlink('composer.json');\"",
-      "@php -r \"rename('composer.json.default', 'composer.json');\"",
-      "@composer dump-autoload -o",
-      "@php craft setup/welcome"
+      "@composer dump-autoload -o"
     ]
   }
 }
